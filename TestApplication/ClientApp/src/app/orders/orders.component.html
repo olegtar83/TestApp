@@ -1,0 +1,20 @@
+<h1 id="tableLabel">Most Visited Departments</h1>
+
+<p>Showing Top 3 Most Visited Departments.</p>
+
+<p *ngIf="!visitedDepartments"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="visitedDepartments">
+  <thead>
+    <tr>
+      <th>Department Name</th>
+      <th>Total Visits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of visitedDepartments">
+      <td>{{ department?.name }}</td>
+      <td>{{ department?.total }}</td>
+    </tr>
+  </tbody>
+</table>
